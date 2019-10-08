@@ -81,30 +81,31 @@ sumZero([ -3, -2, -1, 0, 1, 2, 3 ]); // [-3,3]
 sumZero([ -2, 0, 1, 3 ]); // undefined
 
 // countUniqueValues, sorted array, that counts unique values in array.
+// increment left ptr to be right - 1
 
-// function countUniqueValues(arr) {
-// 	if (arr.length === 0) {
-// 		return 0;
-// 	}
-// 	let unique = 1;
-// 	let left = 0;
-// 	let right = 1;
-// 	while (right < arr.length) {
-// 		if (arr[left] !== arr[right]) {
-// 			console.log('arr left is', arr[left], 'right is ', arr[right]);
+function countUniqueValues(arr) {
+	if (arr.length === 0) {
+		return 0;
+	}
+	let unique = 1;
+	let left = 0;
+	let right = 1;
+	while (right < arr.length) {
+		if (arr[left] !== arr[right]) {
+			console.log('arr left is', arr[left], 'right is ', arr[right]);
 
-// 			unique++;
-// 			right++;
-// 		} else {
-// 			left++;
-// 		}
-// 	}
-// 	return unique;
-// }
+			unique++;
+			right++;
+		} else {
+			left++;
+		}
+	}
+	return unique;
+}
 
-// countUniqueValues([ 1, 1, 1, 1, 2 ]);
-// countUniqueValues([ 1, 2, 3, 4, 5, 6, 7 ]);
-// countUniqueValues([ 1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13 ]);
+countUniqueValues([ 1, 1, 1, 1, 2 ]);
+countUniqueValues([ 1, 2, 3, 4, 5, 6, 7 ]);
+countUniqueValues([ 1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13 ]);
 
 // SLIDING WINDOW
 
