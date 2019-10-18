@@ -78,10 +78,12 @@ class Graph {
 		let node;
 
 		results.push(start);
+		visited[start] = true;
 
 		while (queue.length) {
 			node = queue.shift();
 			results.push(node);
+
 			this.adjacencyList[node].forEach((neighbor) => {
 				if (!visited[neighbor]) {
 					visited[neighbor] = true;
