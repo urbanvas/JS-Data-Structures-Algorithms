@@ -47,4 +47,27 @@ class Graph {
 		DFSHelper(start);
 		return results;
 	}
+
+	DFSIterative(start) {
+		const stack = [];
+		const results = [];
+		const visited = {};
+		let node;
+
+		stack.push(start);
+		visited[start] = true;
+
+		while (stack.length) {
+			node = stack.pop();
+			results.push(node);
+			this.adjacencyList[node].forEach((neighbor) => {
+				if (!visited[neighbor]) {
+					visited[neighbor] = true;
+					stack.push(neighbor);
+				}
+			});
+		}
+
+		return results;
+	}
 }
