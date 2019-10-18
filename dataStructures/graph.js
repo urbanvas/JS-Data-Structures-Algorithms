@@ -70,4 +70,25 @@ class Graph {
 
 		return results;
 	}
+
+	BFS(start) {
+		const queue = [];
+		const results = [];
+		const visited = {};
+		let node;
+
+		results.push(start);
+
+		while (queue.length) {
+			node = queue.shift();
+			results.push(node);
+			this.adjacencyList[node].forEach((neighbor) => {
+				if (!visited[neighbor]) {
+					visited[neighbor] = true;
+					queue.push(neighbor);
+				}
+			});
+		}
+		return results;
+	}
 }
